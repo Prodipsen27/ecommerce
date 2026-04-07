@@ -1,0 +1,35 @@
+# Maven and Java artifacts
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+.mvn/wrapper/maven-wrapper.jar
+build_output*.txt
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# IDE - VS Code
+.vscode/
+
+# Node.js
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
