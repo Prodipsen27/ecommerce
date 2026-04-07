@@ -2,7 +2,7 @@ services:
   - type: web
     name: s-kart-backend
     env: java
-    buildCommand: "./mvnw clean install -DskipTests"
+    buildCommand: "cd server && ./mvnw clean install -DskipTests"
     startCommand: "java -jar server/target/s-kart-0.0.1-SNAPSHOT.jar"
     envVars:
       - key: SPRING_DATASOURCE_URL
