@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: s-kart-backend
+    env: java
+    buildCommand: "./mvnw clean install -DskipTests"
+    startCommand: "java -jar server/target/s-kart-0.0.1-SNAPSHOT.jar"
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: skart-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: skart-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: skart-db
+          property: password
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+
+databases:
+  - name: skart-db
+    databaseName: skart
+    user: admin
+    plan: free
